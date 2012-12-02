@@ -31,15 +31,14 @@
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="39*" />
-                <ColumnDefinition Width="145*" />
+                <ColumnDefinition Width="0*" />
+                <ColumnDefinition Width="184*" />
                 <ColumnDefinition Width="272*" />
             </Grid.ColumnDefinitions>
             <Image Source="loginimage.png" Margin="0,-206,0,206" Grid.ColumnSpan="3" />
             <TextBlock Margin="11,456,1,170" Name="textBlock1" Style="{StaticResource PhoneTextNormalStyle}" Text="password" TextAlignment="Left" FontSize="40" Grid.ColumnSpan="3" />
             <TextBlock FontSize="40" Margin="10,358,2,278" Name="textBlock2" Style="{StaticResource PhoneTextNormalStyle}" Text="email" TextAlignment="Left" Grid.ColumnSpan="3" />
-            <Button Content="signup" Height="70" Margin="46,570,7,49" Width="219" Grid.Column="2" />
-            <Button Content="login" Height="70" Margin="12,570,225,49" Width="219" Grid.ColumnSpan="3" />
+            <Button Content="login" Height="75" Margin="12,570,8,44" Grid.ColumnSpan="2" Grid.Column="1" />
             <TextBox Height="70" HorizontalAlignment="Left" IsReadOnly="False" Margin="10,503,0,116" Name="password" Width="438" Grid.ColumnSpan="3" />
             <TextBox Height="70" HorizontalAlignment="Left" IsReadOnly="False" Margin="10,404,0,215" Name="email" Width="438" Grid.ColumnSpan="3" />
             <TextBlock Margin="10,292,-13,318" Name="PageTitle" Style="{StaticResource PhoneTextTitle1Style}" Text="please login" FontSize="50" Foreground="Red" Grid.ColumnSpan="3" TextAlignment="Left" FontWeight="ExtraBold" />
