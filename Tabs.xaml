@@ -12,24 +12,32 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="True" xmlns:my="clr-namespace:Microsoft.Phone.Controls.Maps;assembly=Microsoft.Phone.Controls.Maps">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <!--Pivot Control-->
         <controls:Pivot Title="mappmon" FontSize="25">
-            <!--Pivot item one-->
-            <controls:PivotItem Header="map">
-            </controls:PivotItem>
 
+            <!--Pivot item one-->
+            <controls:PivotItem Header="options">
+            </controls:PivotItem>
+            
             <!--Pivot item two-->
             <controls:PivotItem Header="list">
             </controls:PivotItem>
 
             <!--Pivot item three-->
-            <!--<controls:PivotItem Header="settings">
-            </controls:PivotItem>-->
+            <controls:PivotItem Header="map">
+                <my:Map Height="585" HorizontalAlignment="Left" Margin="0,0,0,0" Name="map1" VerticalAlignment="Top" Width="456">
+                    <my:Map.CredentialsProvider>
+                        <my:ApplicationIdCredentialsProvider ApplicationId="AiZ0UzJrxoRs7NaDvfKdbXhdQLciuRWRj6l8MBg-B2qBQyxRZI-XTCgPRHSNCBaC " />
+                    </my:Map.CredentialsProvider>
+                </my:Map>
+            </controls:PivotItem>
+
         </controls:Pivot>
+        
     </Grid>
 
     <!--Sample code showing usage of ApplicationBar-->

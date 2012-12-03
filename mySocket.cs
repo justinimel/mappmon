@@ -20,7 +20,7 @@ namespace MappMon
         //static SocketAsyncEventArgs E;
         static string command = "null";
         static string result = "null";
-        static int port = 11437;
+        static int port = 11438;
 
         public static Boolean login(string user, string pass)
         {

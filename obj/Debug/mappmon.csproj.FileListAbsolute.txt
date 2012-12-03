@@ -25,3 +25,9 @@ C:\Users\OSD\Documents\Visual Studio 2010\Projects\mappmon_old\mappmon\obj\Debug
 C:\Users\OSD\Documents\Visual Studio 2010\Projects\mappmon_old\mappmon\Bin\Debug\Microsoft.Phone.Controls.dll
 C:\Users\OSD\Documents\Visual Studio 2010\Projects\mappmon_old\mappmon\Bin\Debug\Microsoft.Phone.Controls.xml
 C:\Users\OSD\Documents\Visual Studio 2010\Projects\mappmon_old\mappmon\obj\Debug\Tabs.g.i.cs
+C:\Users\OSD\Documents\Visual Studio 2010\Projects\mappmon\mappmon\Bin\Debug\Microsoft.Phone.Controls.dll
+C:\Users\OSD\Documents\Visual Studio 2010\Projects\mappmon\mappmon\Bin\Debug\Microsoft.Phone.Controls.xml
+C:\Users\OSD\Documents\Visual Studio 2010\Projects\mappmon\mappmon\obj\Debug\Tabs.g.i.cs
+C:\Users\OSD\Documents\Visual Studio 2010\Projects\mappmon\mappmon\obj\Debug\mappmon.csprojResolveAssemblyReference.cache
+C:\Users\OSD\Documents\Visual Studio 2010\Projects\mappmon\mappmon\Bin\Debug\Microsoft.Phone.Controls.Maps.dll
+C:\Users\OSD\Documents\Visual Studio 2010\Projects\mappmon\mappmon\Bin\Debug\Microsoft.Phone.Controls.Maps.xml

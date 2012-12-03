@@ -1,11 +1,12 @@
-﻿<xapCache source="C:\Users\OSD\Documents\Visual Studio 2010\Projects\mappmon_old\mappmon\Bin\Debug\mappmon.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="12/2/2012 8:22:51 PM">
-  <file source="C:\Users\OSD\Documents\Visual Studio 2010\Projects\mappmon_old\mappmon\Bin\Debug\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="12/1/2012 1:39:13 AM" />
-  <file source="C:\Users\OSD\Documents\Visual Studio 2010\Projects\mappmon_old\mappmon\Background.png" archivePath="Background.png" lastWriteTime="11/18/2012 6:47:13 PM" />
-  <file source="C:\Users\OSD\Documents\Visual Studio 2010\Projects\mappmon_old\mappmon\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="11/18/2012 6:47:13 PM" />
-  <file source="C:\Users\OSD\Documents\Visual Studio 2010\Projects\mappmon_old\mappmon\obj\Debug\mappmon.dll" archivePath="mappmon.dll" lastWriteTime="12/2/2012 8:22:51 PM" />
+﻿<xapCache source="C:\Users\OSD\Documents\Visual Studio 2010\Projects\mappmon\mappmon\Bin\Debug\mappmon.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="12/3/2012 2:15:49 AM">
+  <file source="C:\Users\OSD\Documents\Visual Studio 2010\Projects\mappmon\mappmon\Bin\Debug\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="12/1/2012 1:39:13 AM" />
+  <file source="C:\Users\OSD\Documents\Visual Studio 2010\Projects\mappmon\mappmon\Background.png" archivePath="Background.png" lastWriteTime="11/18/2012 6:47:13 PM" />
+  <file source="C:\Users\OSD\Documents\Visual Studio 2010\Projects\mappmon\mappmon\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="11/18/2012 6:47:13 PM" />
+  <file source="C:\Users\OSD\Documents\Visual Studio 2010\Projects\mappmon\mappmon\obj\Debug\mappmon.dll" archivePath="mappmon.dll" lastWriteTime="12/3/2012 2:15:49 AM" />
   <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v7.1\Libraries\Silverlight\Microsoft.Phone.Controls.dll" archivePath="Microsoft.Phone.Controls.dll" lastWriteTime="9/15/2011 4:36:26 PM" />
-  <file source="C:\Users\OSD\Documents\Visual Studio 2010\Projects\mappmon_old\mappmon\SplashScreenImage.jpg" archivePath="SplashScreenImage.jpg" lastWriteTime="11/18/2012 7:03:08 PM" />
-  <file source="C:\Users\OSD\Documents\Visual Studio 2010\Projects\mappmon_old\mappmon\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="12/2/2012 8:11:08 PM" />
-  <file source="C:\Users\OSD\Documents\Visual Studio 2010\Projects\mappmon_old\mappmon\Bin\Debug\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="12/1/2012 1:39:13 AM" />
-  <file source="C:\Users\OSD\Documents\Visual Studio 2010\Projects\mappmon_old\mappmon\Bin\Debug\Background.png" archivePath="Background.png" lastWriteTime="12/1/2012 1:39:13 AM" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v7.1\Libraries\Silverlight\Microsoft.Phone.Controls.Maps.dll" archivePath="Microsoft.Phone.Controls.Maps.dll" lastWriteTime="9/15/2011 4:36:26 PM" />
+  <file source="C:\Users\OSD\Documents\Visual Studio 2010\Projects\mappmon\mappmon\SplashScreenImage.jpg" archivePath="SplashScreenImage.jpg" lastWriteTime="11/18/2012 7:03:08 PM" />
+  <file source="C:\Users\OSD\Documents\Visual Studio 2010\Projects\mappmon\mappmon\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="12/3/2012 1:30:45 AM" />
+  <file source="C:\Users\OSD\Documents\Visual Studio 2010\Projects\mappmon\mappmon\Bin\Debug\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="12/1/2012 1:39:13 AM" />
+  <file source="C:\Users\OSD\Documents\Visual Studio 2010\Projects\mappmon\mappmon\Bin\Debug\Background.png" archivePath="Background.png" lastWriteTime="12/1/2012 1:39:13 AM" />
 </xapCache>

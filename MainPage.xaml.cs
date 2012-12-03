@@ -23,12 +23,16 @@ namespace mappmon
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            bool result = MappMon.mySocket.login(emailTB.Text, passwordTB.Text);
 
-            if (result == true)
+            NavigationService.Navigate(new Uri("/mappmon;component/Tabs.xaml", UriKind.Relative));
+
+            /*bool result = MappMon.mySocket.login(emailTB.Text, passwordTB.Text);
+
+
+            if (result)
             {
-                NavigationService.Navigate(new Uri("/mappmon;component/Tabs.xaml",UriKind.Relative));
-            }
+                //NavigationService.Navigate(new Uri("/mappmon;component/Tabs.xaml",UriKind.Relative));
+            }*/
         }
     }
 }
