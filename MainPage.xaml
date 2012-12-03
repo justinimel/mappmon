@@ -38,10 +38,12 @@
             <Image Source="loginimage.png" Margin="0,-206,0,206" Grid.ColumnSpan="3" />
             <TextBlock Margin="11,456,1,170" Name="textBlock1" Style="{StaticResource PhoneTextNormalStyle}" Text="password" TextAlignment="Left" FontSize="40" Grid.ColumnSpan="3" />
             <TextBlock FontSize="40" Margin="10,358,2,278" Name="textBlock2" Style="{StaticResource PhoneTextNormalStyle}" Text="email" TextAlignment="Left" Grid.ColumnSpan="3" />
-            <Button Content="login" Height="75" Margin="12,570,8,44" Grid.ColumnSpan="2" Grid.Column="1" />
-            <TextBox Height="70" HorizontalAlignment="Left" IsReadOnly="False" Margin="10,503,0,116" Name="password" Width="438" Grid.ColumnSpan="3" />
-            <TextBox Height="70" HorizontalAlignment="Left" IsReadOnly="False" Margin="10,404,0,215" Name="email" Width="438" Grid.ColumnSpan="3" />
+            <Button Content="login" Height="75" Margin="12,570,8,44" Grid.ColumnSpan="2" Grid.Column="1" BorderBrush="White" Click="Button_Click" />
+            <TextBox Height="70" HorizontalAlignment="Left" IsReadOnly="False" Margin="10,503,0,116" x:Name="passwordTB" Width="438" Grid.ColumnSpan="3" />
+            <TextBox Height="70" HorizontalAlignment="Left" IsReadOnly="False" Margin="10,404,0,215" x:Name="emailTB" Width="438" Grid.ColumnSpan="3" />
             <TextBlock Margin="10,292,-13,318" Name="PageTitle" Style="{StaticResource PhoneTextTitle1Style}" Text="please login" FontSize="50" Foreground="Red" Grid.ColumnSpan="3" TextAlignment="Left" FontWeight="ExtraBold" />
+            <TextBlock FontSize="24" Grid.Column="1" Grid.ColumnSpan="2" Margin="12,643,0,-7" Name="incorrect" Style="{StaticResource PhoneTextNormalStyle}" Text="incorrect email or password" TextAlignment="Center" Foreground="Red" Visibility="Collapsed" />
+            <TextBlock FontSize="24" Grid.Column="1" Grid.ColumnSpan="2" Margin="12,643,0,-7" Name="server" Style="{StaticResource PhoneTextNormalStyle}" Text="server error, please try again later" TextAlignment="Center" Foreground="Red" Visibility="Collapsed" />
         </Grid>
     </Grid>
  
