@@ -24,13 +24,25 @@ namespace mappmon
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-     
 
-            int result = MappMon.mySocket.login(emailTB.Text, passwordTB.Text);
-
-            if (result != -1)
+            if (emailTB.Text != "" && passwordTB.Password != "")
             {
-                NavigationService.Navigate(new Uri("/mappmon;component/Tabs.xaml",UriKind.Relative));
+
+                int result = MappMon.mySocket.login(emailTB.Text, passwordTB.Password);
+
+                if (result != -1)
+                {
+                    SolidColorBrush white = new SolidColorBrush(Colors.White);
+                    NavigationService.Navigate(new Uri("/mappmon;component/Tabs.xaml", UriKind.Relative));
+                    incorrecterror.Visibility = Visibility.Collapsed;
+                    LoginButton.BorderBrush = white;
+                }
+                else
+                {
+                    SolidColorBrush red = new SolidColorBrush(Colors.Red);
+                    incorrecterror.Visibility = Visibility.Visible;
+                    LoginButton.BorderBrush = red;
+                }
             }
         }
     }
