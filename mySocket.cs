@@ -20,45 +20,77 @@ namespace MappMon
         //static SocketAsyncEventArgs E;
         static string command = "null";
         static string result = "null";
-        static int port = 11438;
+        static int port = 11436;
 
-        public static Boolean login(string user, string pass)
+        public static bool addLocation(int uid, double longitude, double latitude, double horizontal_acc)
         {
-            command = "*select password from users where username='" + user + "'|iam|socool\n";
-            SocketAsyncEventArgs socketEventArg = new SocketAsyncEventArgs();
-            DnsEndPoint hostEntry = new DnsEndPoint("sslab07.cs.purdue.edu", port);
+            result = "null";
+            command = "addLocation:" + uid + "$" + longitude + "$" + latitude + "$" + horizontal_acc + "|iam|socool\n";
 
-            // Create a socket and connect to the server
-            Socket sock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            send_receive_through_socket();
 
-            socketEventArg.Completed += new EventHandler<SocketAsyncEventArgs>(SocketEventArg_Completed);
-            socketEventArg.RemoteEndPoint = hostEntry;
-            socketEventArg.UserToken = sock;
-            sock.ConnectAsync(socketEventArg);
+            string tmpRes = result.Substring(0, result.IndexOf("\n"));
+
+            if (tmpRes.Equals("true"))
+            {
+                clientDone.Reset();
+                return true;
+            }
+            else
+            {
+                clientDone.Reset();
+                return false;
+            }
+        }
+
+        public static int login(string user, string pass)
+        {
+            result = "null";
+            command = "login:" + user + "|iam|socool\n";
+
+            send_receive_through_socket();
 
 
-            clientDone.WaitOne();
+            string tmpRes = result.Substring(0, result.IndexOf("\n"));
 
+            if (tmpRes.Equals("error"))
+            {
+                clientDone.Reset();
+                return -1;
+            }
+
+            string[] tmpResArr = tmpRes.Split('|');
+            result = tmpResArr[1];
+
+            if (pass.Length == 0)
+            {
+                clientDone.Reset();
+                return -1;
+            }
             for (int i = 0; i < pass.Length; i++)
             {
                 if (pass[i] != result[i])
                 {
-                    return false;
+                    clientDone.Reset();
+                    return -1;
                 }
             }
-            return true;
-
-
+            clientDone.Reset();
+            return Convert.ToInt32(tmpResArr[0]);
         }
 
-        public static string getUsers()
-        {
-            command = "get-all-users|iam|socool\n";
 
+
+
+
+
+
+
+
+        private static void send_receive_through_socket()
+        {
             SocketAsyncEventArgs socketEventArg = new SocketAsyncEventArgs();
             DnsEndPoint hostEntry = new DnsEndPoint("sslab07.cs.purdue.edu", port);
-
-            // Create a socket and connect to the server
             Socket sock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
             socketEventArg.Completed += new EventHandler<SocketAsyncEventArgs>(SocketEventArg_Completed);
@@ -66,17 +98,11 @@ namespace MappMon
             socketEventArg.UserToken = sock;
             sock.ConnectAsync(socketEventArg);
 
-
             clientDone.WaitOne();
-
-
-            return result;
         }
 
         static ManualResetEvent clientDone = new ManualResetEvent(false);
-        // A single callback is used for all socket operations. 
-        // This method forwards execution on to the correct handler 
-        // based on the type of completed operation
+
         public static void SocketEventArg_Completed(object sender, SocketAsyncEventArgs e)
         {
             switch (e.LastOperation)
@@ -95,7 +121,6 @@ namespace MappMon
             }
         }
 
-        // Called when a ConnectAsync operation completes
         private static void ProcessConnect(SocketAsyncEventArgs e)
         {
             if (e.SocketError == SocketError.Success)
@@ -127,8 +152,6 @@ namespace MappMon
             }
         }
 
-        // Called when a ReceiveAsync operation completes
-        // </summary>
         private static void ProcessReceive(SocketAsyncEventArgs e)
         {
             if (e.SocketError == SocketError.Success)
@@ -147,7 +170,7 @@ namespace MappMon
 
                 result = new String(data);
 
-                Debug.WriteLine(result);
+                //Debug.WriteLine(result);
 
                 // Data has now been sent and received from the server. 
                 // Disconnect from the server
@@ -155,7 +178,7 @@ namespace MappMon
                 sock.Shutdown(SocketShutdown.Send);
                 sock.Close();
                 clientDone.Set();
-                //return text;
+                return;
             }
             else
             {
@@ -164,8 +187,6 @@ namespace MappMon
             }
         }
 
-
-        // Called when a SendAsync operation completes
         private static void ProcessSend(SocketAsyncEventArgs e)
         {
             if (e.SocketError == SocketError.Success)
@@ -177,7 +198,7 @@ namespace MappMon
 
                 byte[] bytes = new byte[512];
                 int byteCount = sock.ReceiveBufferSize;
-                Debug.WriteLine("byteCount = " + byteCount);
+                //Debug.WriteLine("byteCount = " + byteCount);
                 bool willRaiseEvent = sock.ReceiveAsync(e);
                 //return willRaiseEvent;
                 //try to use sock.Receive or somethign similar?
@@ -193,8 +214,5 @@ namespace MappMon
                 throw new SocketException((int)e.SocketError);
             }
         }
-
-
-
     }
 }

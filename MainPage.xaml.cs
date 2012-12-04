@@ -24,15 +24,14 @@ namespace mappmon
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            NavigationService.Navigate(new Uri("/mappmon;component/Tabs.xaml", UriKind.Relative));
+     
 
-            /*bool result = MappMon.mySocket.login(emailTB.Text, passwordTB.Text);
+            int result = MappMon.mySocket.login(emailTB.Text, passwordTB.Text);
 
-
-            if (result)
+            if (result != -1)
             {
-                //NavigationService.Navigate(new Uri("/mappmon;component/Tabs.xaml",UriKind.Relative));
-            }*/
+                NavigationService.Navigate(new Uri("/mappmon;component/Tabs.xaml",UriKind.Relative));
+            }
         }
     }
 }
