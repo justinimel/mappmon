@@ -18,9 +18,34 @@ namespace MappMon
     {
 
         //static SocketAsyncEventArgs E;
-        static string command = "null";
-        static string result = "null";
-        static int port = 11436;
+        private static string command = "null";
+        private static string result = "null";
+        private static int BUFFER_SIZE = 40240;
+        private static int port = 11436;
+
+        //time format is YYYY-MM-DD HH:MM:SS
+        //for example, to get location of user with uid = 2 for the day of december 4th, 
+        //getLocations(2, "2012-12-04 00:00:00", "2012-12-05 00:00:00");
+        public static string[] getLocations(int uid, string time_from, string time_to)
+        {
+            result = "null";
+            command = "getLocations:" + uid + "$" + time_from + "$" + time_to + "|iam|socool\n";
+
+            send_receive_through_socket();
+
+            if (!result.Contains("[END]"))
+            {
+                clientDone.Reset();
+                string[] error = { "error" };
+                return error;
+            }
+
+            string tmpRes = result.Substring(0, result.IndexOf("[END]"));
+
+
+            clientDone.Reset();
+            return tmpRes.Split('\n');
+        }
 
         public static bool addLocation(int uid, double longitude, double latitude, double horizontal_acc)
         {
@@ -67,6 +92,11 @@ namespace MappMon
                 clientDone.Reset();
                 return -1;
             }
+            if (pass.Length != result.Length)
+            {
+                clientDone.Reset();
+                return -1;
+            }
             for (int i = 0; i < pass.Length; i++)
             {
                 if (pass[i] != result[i])
@@ -101,9 +131,9 @@ namespace MappMon
             clientDone.WaitOne();
         }
 
-        static ManualResetEvent clientDone = new ManualResetEvent(false);
+        private static ManualResetEvent clientDone = new ManualResetEvent(false);
 
-        public static void SocketEventArg_Completed(object sender, SocketAsyncEventArgs e)
+        private static void SocketEventArg_Completed(object sender, SocketAsyncEventArgs e)
         {
             switch (e.LastOperation)
             {
@@ -128,7 +158,7 @@ namespace MappMon
                 // Successfully connected to the server
 
                 // Send 'Hello World' to the server
-                byte[] buffer = new byte[1024];
+                byte[] buffer = new byte[BUFFER_SIZE];
                 //string command = "get-all-users|iam|socool\n";
                 //string command = "GET-ALL-PETS|iam|socool\n";
                 char[] C_arr = command.ToCharArray();

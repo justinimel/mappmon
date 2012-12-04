@@ -36,6 +36,7 @@ namespace mappmon
                     NavigationService.Navigate(new Uri("/mappmon;component/Tabs.xaml", UriKind.Relative));
                     incorrecterror.Visibility = Visibility.Collapsed;
                     LoginButton.BorderBrush = white;
+                    (App.Current as App).uid = result;
                 }
                 else
                 {
