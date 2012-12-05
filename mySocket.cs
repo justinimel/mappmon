@@ -120,7 +120,7 @@ namespace MappMon
         private static void send_receive_through_socket()
         {
             SocketAsyncEventArgs socketEventArg = new SocketAsyncEventArgs();
-            DnsEndPoint hostEntry = new DnsEndPoint("sslab07.cs.purdue.edu", port);
+            DnsEndPoint hostEntry = new DnsEndPoint("sslab10.cs.purdue.edu", port);
             Socket sock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
             socketEventArg.Completed += new EventHandler<SocketAsyncEventArgs>(SocketEventArg_Completed);

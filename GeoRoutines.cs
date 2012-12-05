@@ -30,7 +30,7 @@ namespace mappmon
             string[] result = MappMon.mySocket.getLocations((App.Current as App).uid, start, end);
             if (!result.Equals("error"))
             {
-                int resultLength = result.Length;
+                int resultLength = result.Length - 1;
                 LocationCollection points = new LocationCollection();
                 int i = 0;
                 double eastSide = -180;
@@ -40,13 +40,17 @@ namespace mappmon
                 while (i < resultLength)
                 {
                     string[] resString = result[i].Split(new Char[] { '|' });
-                    double lat = Convert.ToDouble(resString[0]);
-                    if (lat < westSide) westSide = lat;
-                    if (lat > eastSide) eastSide = lat;
-                    double longi = Convert.ToDouble(resString[1]);
-                    if (longi > northSide) northSide = longi;
-                    if (longi < southSide) southSide = longi;
+                    //System.Diagnostics.Debug.WriteLine(resString);
+                    Double longi;
+                    longi = Double.Parse(resString[0]);
+                    if (longi < westSide) westSide = longi;
+                    if (longi > eastSide) eastSide = longi;
+                    Double lat;
+                    lat = Double.Parse(resString[1]);
+                    if (lat > northSide) northSide = lat;
+                    if (lat < southSide) southSide = lat;
                     points.Add(new System.Device.Location.GeoCoordinate(lat, longi));
+                    i++;
                 }
                 string id = "Movement from " + start + " to " + end;
                 MapPolyline actualLine = new MapPolyline();
@@ -56,12 +60,13 @@ namespace mappmon
                 view.North = northSide;
                 view.South = southSide;
                 actualLine.Locations = points;
-                actualLine.Width = 3;
                 Color StrokeColor = new Color();
                 StrokeColor.B = 255;
                 actualLine.Stroke = new SolidColorBrush(StrokeColor);
+                actualLine.StrokeThickness = 5;
                 strokeLayer.Children.Add(actualLine);
                 geoMap.SetView(view);
+                
             }
             else
             {
