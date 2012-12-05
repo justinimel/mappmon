@@ -23,8 +23,7 @@ namespace mappmon
         /// <returns>The root frame of the Phone Application.</returns>
         public PhoneApplicationFrame RootFrame { get; private set; }
         public int uid;
-        public int interval = 30;
-        public int day = 1;
+        public int day;
         /// <summary>
         /// Constructor for the Application object.
         /// </summary>

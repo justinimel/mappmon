@@ -51,22 +51,23 @@ namespace mappmon
 
         private void fivesecondsbut_Checked(object sender, RoutedEventArgs e)
         {
-            (App.Current as App).interval = 5;
+            cw.time = 5000;
         }
 
         private void thirtysecsbut_Checked(object sender, RoutedEventArgs e)
         {
-            (App.Current as App).interval = 30;
+            if (cw != null)
+                cw.time = 30000;
         }
 
         private void oneminbut_Checked(object sender, RoutedEventArgs e)
         {
-            (App.Current as App).interval = 60;
+            cw.time = 60000;
         }
 
         private void twominbut_Checked(object sender, RoutedEventArgs e)
         {
-            (App.Current as App).day = 120;
+            cw.time = 120000;
         }
 
         //add some function for my GeoRoutines when you or I have that figured out.
