@@ -28,12 +28,15 @@ namespace mappmon
             worker.WorkerReportsProgress = false;
             worker.WorkerSupportsCancellation = false;
             worker.DoWork += new DoWorkEventHandler(worker_DoWork);
-            worker.RunWorkerAsync();
+            //worker.RunWorkerAsync();
             worker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(worker_RunWorkerCompleted);
         }
 
         void worker_DoWork(object sender, DoWorkEventArgs e)
         {
+
+            Thread.Sleep(3000);
+
             while (true)
             {
                 if (watcher.Status == GeoPositionStatus.Ready)

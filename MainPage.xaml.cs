@@ -27,8 +27,10 @@ namespace mappmon
 
             if (emailTB.Text != "" && passwordTB.Password != "")
             {
+                int result = -1;
 
-                int result = MappMon.mySocket.login(emailTB.Text, passwordTB.Password);
+         
+                result = MappMon.mySocket.login(emailTB.Text, passwordTB.Password);
 
                 if (result != -1)
                 {

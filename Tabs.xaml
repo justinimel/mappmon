@@ -41,9 +41,9 @@
             </controls:PivotItem>
             
             <!--Pivot item two-->
-            <controls:PivotItem Header="list">
+            <!--<controls:PivotItem Header="list">
                 <ScrollViewer Height="600" HorizontalAlignment="Left" Margin="0" Name="scrollViewer1" VerticalAlignment="Top" Width="457" />
-            </controls:PivotItem>
+            </controls:PivotItem>-->
 
             <!--Pivot item three-->
             <controls:PivotItem Header="map">

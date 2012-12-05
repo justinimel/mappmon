@@ -28,19 +28,19 @@ namespace mappmon
 
         public void plotPath(string start, string end)
         {
-            string [] result = MappMon.mySocket.getLocations((App.Current as App).uid,start,end);
-            if (!result[0].Equals("error"))
+            string[] result = MappMon.mySocket.getLocations((App.Current as App).uid, start, end);
+            if (!result.Equals("error"))
             {
                 int resultLength = result.Length - 1;
                 LocationCollection points = new LocationCollection();
                 int i = 0;
                 double eastSide = -180;
                 double westSide = 180;
-                double northSide = -90;
-                double southSide = 90;
+                double northSide = -180;
+                double southSide = 180;
                 while (i < resultLength)
                 {
-                    string [] resString = result[i].Split(new Char [] {'|'});
+                    string[] resString = result[i].Split(new Char[] { '|' });
                     //System.Diagnostics.Debug.WriteLine(resString);
                     Double longi;
                     longi = Double.Parse(resString[0]);
@@ -75,10 +75,19 @@ namespace mappmon
                 geoMap.SetView(view);
                 geoMap.Children.Add(actualLine);
                 geoMap.UpdateLayout();
+<<<<<<< Updated upstream
+               
+            }
+            else
+            {
+                //bitch and moan somehow.
+             
+=======
             }
             else
             {
                 //bitch and moan somehow
+>>>>>>> Stashed changes
             }
         }
     }

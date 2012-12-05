@@ -24,9 +24,10 @@ namespace mappmon
             gr = new GeoRoutines(map1, lineLayer);
 
             gr.plotPath("2012-12-04 00:00:00", "2012-12-05 00:00:00");
+            
             //getLocations(uid, "2012-12-04 00:00:00", "2012-12-05 00:00:00");
 
-            cw.getCoordinates();
+            //cw.getCoordinates();
         }
 
         public void getCurrentLocation_button(object sender, RoutedEventArgs e)
