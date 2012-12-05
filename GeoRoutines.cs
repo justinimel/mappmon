@@ -29,7 +29,7 @@ namespace mappmon
         public void plotPath(string start, string end)
         {
             string [] result = MappMon.mySocket.getLocations((App.Current as App).uid,start,end);
-            if (!result[0].Equals("error"))
+            
             if (!result[0].Equals("error"))
             {
                 int resultLength = result.Length - 1;
