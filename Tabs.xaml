@@ -40,7 +40,7 @@
 
             <!--Pivot item three-->
             <controls:PivotItem Header="map">
-                <my:Map Height="585" HorizontalAlignment="Left" Margin="0,0,0,0" Name="map1" VerticalAlignment="Top" Width="456">
+                <my:Map Height="585" HorizontalAlignment="Left" Margin="0,0,0,0" x:Name="map1" VerticalAlignment="Top" Width="456">
                     <my:Map.CredentialsProvider>
                         <my:ApplicationIdCredentialsProvider ApplicationId="AiZ0UzJrxoRs7NaDvfKdbXhdQLciuRWRj6l8MBg-B2qBQyxRZI-XTCgPRHSNCBaC " />
                     </my:Map.CredentialsProvider>

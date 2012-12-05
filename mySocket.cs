@@ -236,7 +236,8 @@ namespace MappMon
                 //need to get all of data, not just first line!
                 if (!willRaiseEvent)
                 {
-                    ProcessReceive(e);
+                    
+                        ProcessReceive(e);
                 }
             }
             else

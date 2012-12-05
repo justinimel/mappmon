@@ -28,6 +28,7 @@
             <TextBlock x:Name="ApplicationTitle" Text="mappmon" Style="{StaticResource PhoneTextNormalStyle}" FontSize="25" />
         </StackPanel>
 
+        <ScrollViewer Margin="0,78,0,0" Grid.RowSpan="2">
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <Grid.ColumnDefinitions>
@@ -45,8 +46,11 @@
             <TextBlock FontSize="24" Grid.Column="1" Grid.ColumnSpan="2" Margin="12,643,0,-7" x:Name="incorrecterror" Style="{StaticResource PhoneTextNormalStyle}" Text="incorrect email or password" TextAlignment="Center" Foreground="Red" Visibility="Collapsed" />
             <TextBlock FontSize="24" Grid.Column="1" Grid.ColumnSpan="2" Margin="12,643,0,-7" x:Name="servererror" Style="{StaticResource PhoneTextNormalStyle}" Text="server error, please try again later" TextAlignment="Center" Foreground="Red" Visibility="Collapsed" />
         </Grid>
+
+        </ScrollViewer>
     </Grid>
- 
+    
+    
     <!--Sample code showing usage of ApplicationBar-->
     <!--<phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">

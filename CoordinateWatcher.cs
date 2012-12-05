@@ -54,13 +54,15 @@ namespace mappmon
                 MessageBox.Show("location service is disabled.");
             else if (e.Status == GeoPositionStatus.NoData)
                 MessageBox.Show("No location data can be found right now.");
-            else if (e.Status == GeoPositionStatus.Initializing)
-                MessageBox.Show("Attempting to retrieve location data.");
+            //else if (e.Status == GeoPositionStatus.Initializing)
+              //  MessageBox.Show("Attempting to retrieve location data.");
         }
 
         public void getCoordinates()
         {
             bool success = MappMon.mySocket.addLocation((App.Current as App).uid, watcher.Position.Location.Longitude, watcher.Position.Location.Latitude, watcher.Position.Location.HorizontalAccuracy);
+            if (success) MessageBox.Show("Found location successfully!");
+            else MessageBox.Show("Error finding location, please try again.");
         }
 
     }
