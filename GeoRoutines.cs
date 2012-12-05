@@ -30,7 +30,6 @@ namespace mappmon
         {
             string [] result = MappMon.mySocket.getLocations((App.Current as App).uid,start,end);
             
-            if (!result[0].Equals("error"))
             {
                 int resultLength = result.Length - 1;
                 LocationCollection points = new LocationCollection();
