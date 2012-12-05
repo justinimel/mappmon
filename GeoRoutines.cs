@@ -30,6 +30,7 @@ namespace mappmon
         {
             string [] result = MappMon.mySocket.getLocations((App.Current as App).uid,start,end);
             if (!result[0].Equals("error"))
+            if (!result[0].Equals("error"))
             {
                 int resultLength = result.Length - 1;
                 LocationCollection points = new LocationCollection();
@@ -44,12 +45,12 @@ namespace mappmon
                     //System.Diagnostics.Debug.WriteLine(resString);
                     Double longi;
                     longi = Double.Parse(resString[0]);
-                    if (longi < westSide) westSide = longi;
-                    if (longi > eastSide) eastSide = longi;
+                    if (longi < westSide) westSide = longi +1;
+                    if (longi > eastSide) eastSide = longi -1;
                     Double lat;
                     lat = Double.Parse(resString[1]);
-                    if (lat > northSide) northSide = lat;
-                    if (lat < southSide) southSide = lat;
+                    if (lat > northSide) northSide = lat -1;
+                    if (lat < southSide) southSide = lat +1;
                     points.Add(new System.Device.Location.GeoCoordinate(lat, longi));
                     Pushpin pin = new Pushpin();
                     pin.Location = new GeoCoordinate(lat, longi);
