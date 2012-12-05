@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="GeoRoutines"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:m="clr-namespace:Microsoft.Phone.Controls.Maps;assembly=Microsoft.Phone.Controls.Maps">
+    <Grid x:Name="LayoutRoot" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="110" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <m:Map CredentialsProvider="Ak5bW_ZB7AivXuiYYemEcJ9HcureNehW-YNtEt2nCZUoEaP2ZlHiR6imsJBwEtGP" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="MyMap"  Grid.Column="1">
+        </m:Map>
+    </Grid>
+</UserControl>
