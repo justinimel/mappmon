@@ -15,9 +15,17 @@ namespace mappmon
 {
     public partial class PivotPage1 : PhoneApplicationPage
     {
+        private CoordinateWatcher cw;
+
         public PivotPage1()
         {
             InitializeComponent();
+            cw = new CoordinateWatcher();
+        }
+
+        public void getCurrentLocation_button(object sender, RoutedEventArgs e)
+        {
+            cw.getCoordinates();
         }
     }
 }
