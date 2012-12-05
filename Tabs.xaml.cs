@@ -31,7 +31,14 @@ namespace mappmon
 
         public void getCurrentLocation_button(object sender, RoutedEventArgs e)
         {
-            cw.getCoordinates();
+            if (cw.getCoordinates())
+            {
+                MessageBox.Show("Get location successful!");
+            }
+            else
+            {
+                MessageBox.Show("Get location failed!");
+            }
         }
 
         private void twodaysbut_Checked(object sender, RoutedEventArgs e)

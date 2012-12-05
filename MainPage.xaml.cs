@@ -40,6 +40,7 @@ namespace mappmon
                 }
                 else
                 {
+                    MessageBox.Show("Incorrect user name or password!");
                     SolidColorBrush red = new SolidColorBrush(Colors.Red);
                     incorrecterror.Visibility = Visibility.Visible;
                     LoginButton.BorderBrush = red;
