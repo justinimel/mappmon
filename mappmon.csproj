@@ -67,6 +67,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="CoordinateWatcher.cs" />
+    <Compile Include="GeoRoutines.cs" />
     <Compile Include="mySocket.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>

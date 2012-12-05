@@ -16,16 +16,19 @@ namespace mappmon
     public partial class PivotPage1 : PhoneApplicationPage
     {
         private CoordinateWatcher cw;
-
+        private GeoRoutines gr;
         public PivotPage1()
         {
             InitializeComponent();
             cw = new CoordinateWatcher();
+            gr = new GeoRoutines(map1, lineLayer);
         }
 
         public void getCurrentLocation_button(object sender, RoutedEventArgs e)
         {
             cw.getCoordinates();
         }
+
+        //add some function for my GeoRoutines when you or I have that figured out.
     }
 }
