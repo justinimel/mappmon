@@ -28,15 +28,13 @@
                         <ColumnDefinition Width="272*" />
                     </Grid.ColumnDefinitions>
                     <TextBlock FontSize="40" Margin="10,10,2,533" Name="textBlock1" Style="{StaticResource PhoneTextNormalStyle}" Text="date range" TextAlignment="Left" Grid.ColumnSpan="2" Grid.Column="1" Height="57" Foreground="#FFEF0000" />
-                    <TextBlock FontSize="40" Margin="10,213,2,328" Name="textBlock2" Style="{StaticResource PhoneTextNormalStyle}" Text="update frequency" TextAlignment="Left" Grid.ColumnSpan="2" Grid.Column="1" Height="59" Foreground="Red" />
+                    <TextBlock FontSize="40" Margin="10,145,2,396" Name="textBlock2" Style="{StaticResource PhoneTextNormalStyle}" Text="update frequency" TextAlignment="Left" Grid.ColumnSpan="2" Grid.Column="1" Height="59" Foreground="Red" />
                     <Button Content="Test Current Location" x:Name="GetCurrentLocationButton" Height="88" Margin="12,504,8,8" Grid.ColumnSpan="2" Grid.Column="1" Click="getCurrentLocation_button" />
-                    <RadioButton Content="2 days ago" Grid.Column="1" Grid.ColumnSpan="2" Height="72" HorizontalAlignment="Left" Margin="20,62,0,0" x:Name="twodaysbut" VerticalAlignment="Top" GroupName="daterange" Checked="twodaysbut_Checked" />
-                    <RadioButton IsChecked="True"  Content="yesterday" Grid.Column="1" Grid.ColumnSpan="2" Height="72" HorizontalAlignment="Left" Margin="20,111,0,0" x:Name="yesterdaybut" VerticalAlignment="Top" GroupName="daterange" Checked="yesterdaybut_Checked" />
-                    <RadioButton Content="today" Grid.Column="1" Grid.ColumnSpan="2" Height="72" HorizontalAlignment="Left" Margin="20,160,0,0" x:Name="todaybut" VerticalAlignment="Top" GroupName="daterange" Checked="todaybut_Checked" />
-                    <RadioButton Content="5 seconds" Grid.Column="1" Grid.ColumnSpan="2" Height="72" HorizontalAlignment="Left" Margin="20,265,0,0" x:Name="fivesecondsbut" VerticalAlignment="Top" GroupName="freq" Checked="fivesecondsbut_Checked" />
-                    <RadioButton IsChecked="True" Content="30 seconds" Grid.Column="1" Grid.ColumnSpan="2" Height="72" HorizontalAlignment="Left" Margin="20,314,0,0" x:Name="thirtysecsbut" VerticalAlignment="Top" GroupName="freq" Checked="thirtysecsbut_Checked" />
-                    <RadioButton Content="1 minute" Grid.Column="1" Grid.ColumnSpan="2" Height="72" HorizontalAlignment="Left" Margin="20,363,0,0" x:Name="oneminbut" VerticalAlignment="Top" GroupName="freq" Checked="oneminbut_Checked" />
-                    <RadioButton Content="2 minutes" Grid.Column="1" Grid.ColumnSpan="2" Height="72" HorizontalAlignment="Left" Margin="20,412,0,0" x:Name="twominbut" VerticalAlignment="Top" GroupName="freq" Checked="twominbut_Checked" />
+                    <RadioButton IsChecked="True"  Content="yesterday" Grid.Column="1" Grid.ColumnSpan="2" Height="72" HorizontalAlignment="Left" Margin="20,65,0,0" x:Name="yesterdaybut" VerticalAlignment="Top" GroupName="daterange" Checked="yesterdaybut_Checked" />
+                    <RadioButton Content="5 seconds" Grid.Column="1" Grid.ColumnSpan="2" Height="72" HorizontalAlignment="Left" Margin="20,197,0,0" x:Name="fivesecondsbut" VerticalAlignment="Top" GroupName="freq" Checked="fivesecondsbut_Checked" />
+                    <RadioButton IsChecked="True" Content="30 seconds" Grid.Column="1" Grid.ColumnSpan="2" Height="72" HorizontalAlignment="Left" Margin="20,246,0,0" x:Name="thirtysecsbut" VerticalAlignment="Top" GroupName="freq" Checked="thirtysecsbut_Checked" />
+                    <RadioButton Content="1 minute" Grid.Column="1" Height="72" HorizontalAlignment="Left" Margin="20,295,0,0" x:Name="oneminbut" VerticalAlignment="Top" GroupName="freq" Checked="oneminbut_Checked" />
+                    <RadioButton Content="2 minutes" Grid.Column="1" Grid.ColumnSpan="2" Height="72" HorizontalAlignment="Left" Margin="20,344,0,0" x:Name="twominbut" VerticalAlignment="Top" GroupName="freq" Checked="twominbut_Checked" />
                 </Grid>
             </controls:PivotItem>
             
