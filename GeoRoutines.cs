@@ -33,10 +33,10 @@ namespace mappmon
                 int resultLength = result.Length;
                 LocationCollection points = new LocationCollection();
                 int i = 0;
-                double eastSide = 0;
-                double westSide = 0;
-                double northSide = 0;
-                double southSide = 0;
+                double eastSide = -180;
+                double westSide = 180;
+                double northSide = -180;
+                double southSide = 180;
                 while (i < resultLength)
                 {
                     string[] resString = result[i].Split(new Char[] { '|' });
