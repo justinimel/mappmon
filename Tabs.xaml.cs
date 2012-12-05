@@ -23,7 +23,18 @@ namespace mappmon
             cw = new CoordinateWatcher();
             gr = new GeoRoutines(map1, lineLayer);
 
-            gr.plotPath("2012-12-05 00:00:00", "2012-12-06 00:00:00");
+            if ((App.Current as App).day == 0)
+            {
+                gr.plotPath("2012-12-05 00:00:00", "2012-12-06 00:00:00");
+            }
+            else if ((App.Current as App).day == 1)
+            {
+                gr.plotPath("2012-12-04 00:00:00", "2012-12-05 00:00:00");
+            }
+            else if ((App.Current as App).day == 2)
+            {
+                gr.plotPath("2012-12-03 00:00:00", "2012-12-04 00:00:00");
+            }
             
             //getLocations(uid, "2012-12-04 00:00:00", "2012-12-05 00:00:00");
 
@@ -42,7 +53,7 @@ namespace mappmon
             }
         }
 
-        private void twodaysbut_Checked(object sender, RoutedEventArgs e)
+        /*private void twodaysbut_Checked(object sender, RoutedEventArgs e)
         {
             (App.Current as App).day = 2;
         }
@@ -50,7 +61,7 @@ namespace mappmon
         private void yesterdaybut_Checked(object sender, RoutedEventArgs e)
         {
             (App.Current as App).day = 1;
-        }
+        }*/
 
         private void todaybut_Checked(object sender, RoutedEventArgs e)
         {

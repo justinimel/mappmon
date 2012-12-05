@@ -28,15 +28,13 @@ namespace mappmon
             worker.WorkerReportsProgress = false;
             worker.WorkerSupportsCancellation = false;
             worker.DoWork += new DoWorkEventHandler(worker_DoWork);
+            //Thread.Sleep(4000);
             //worker.RunWorkerAsync();
             worker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(worker_RunWorkerCompleted);
         }
 
         void worker_DoWork(object sender, DoWorkEventArgs e)
         {
-
-            Thread.Sleep(3000);
-
             while (true)
             {
                 if (watcher.Status == GeoPositionStatus.Ready)
@@ -64,8 +62,6 @@ namespace mappmon
         public bool getCoordinates()
         {
             bool success = MappMon.mySocket.addLocation((App.Current as App).uid, watcher.Position.Location.Longitude, watcher.Position.Location.Latitude, watcher.Position.Location.HorizontalAccuracy);
-            //if (success) MessageBox.Show("Found location successfully!");
-            //else MessageBox.Show("Error finding location, please try again.");
 
             return success;
         }
