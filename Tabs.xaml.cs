@@ -15,11 +15,17 @@ namespace mappmon
 {
     public partial class PivotPage1 : PhoneApplicationPage
     {
-        GeoRoutines drawer;
+        private CoordinateWatcher cw;
+
         public PivotPage1()
         {
             InitializeComponent();
-            drawer = new GeoRoutines(map1, lineLayer);
+            cw = new CoordinateWatcher();
+        }
+
+        public void getCurrentLocation_button(object sender, RoutedEventArgs e)
+        {
+            cw.getCoordinates();
         }
     }
 }
