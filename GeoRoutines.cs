@@ -11,6 +11,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Controls.Maps;
+using System.Device.Location;
 
 namespace mappmon
 {
@@ -50,6 +51,9 @@ namespace mappmon
                     if (lat > northSide) northSide = lat;
                     if (lat < southSide) southSide = lat;
                     points.Add(new System.Device.Location.GeoCoordinate(lat, longi));
+                    Pushpin pin = new Pushpin();
+                    pin.Location = new GeoCoordinate(lat, longi);
+                    strokeLayer.Children.Add(pin);
                     i++;
                 }
                 string id = "Movement from " + start + " to " + end;
@@ -61,16 +65,22 @@ namespace mappmon
                 view.South = southSide;
                 actualLine.Locations = points;
                 Color StrokeColor = new Color();
-                StrokeColor.B = 255;
+                StrokeColor.B = 10;
+                StrokeColor.A = 200;
+                StrokeColor.G = 10;
+                StrokeColor.R = 250;
                 actualLine.Stroke = new SolidColorBrush(StrokeColor);
+                actualLine.Opacity = 0.9;
                 actualLine.StrokeThickness = 5;
-                strokeLayer.Children.Add(actualLine);
                 geoMap.SetView(view);
-                
+                geoMap.Children.Add(actualLine);
+                geoMap.UpdateLayout();
+                return actualLine;
             }
             else
             {
                 //bitch and moan somehow.
+                return null;
             }
         }
     }
