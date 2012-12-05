@@ -43,6 +43,8 @@
                     <my:Map.CredentialsProvider>
                         <my:ApplicationIdCredentialsProvider ApplicationId="AiZ0UzJrxoRs7NaDvfKdbXhdQLciuRWRj6l8MBg-B2qBQyxRZI-XTCgPRHSNCBaC " />
                     </my:Map.CredentialsProvider>
+                    <my:MapLayer x:Name="lineLayer">
+                    </my:MapLayer>
                 </my:Map>
             </controls:PivotItem>
 

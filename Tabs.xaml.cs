@@ -15,9 +15,11 @@ namespace mappmon
 {
     public partial class PivotPage1 : PhoneApplicationPage
     {
+        GeoRoutines drawer;
         public PivotPage1()
         {
             InitializeComponent();
+            drawer = new GeoRoutines(map1, lineLayer);
         }
     }
 }

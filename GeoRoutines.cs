@@ -17,13 +17,12 @@ namespace mappmon
 
     public class GeoRoutines
     {
-        public GeoRoutines()
+        Map geoMap;
+        MapLayer strokeLayer;
+        public GeoRoutines(Microsoft.Phone.Controls.Maps.Map usedMap, MapLayer usedLayer)
         {
-        }
-
-        public void GetMap()
-        {
-
+            geoMap = usedMap;
+            strokeLayer = usedLayer;
         }
 
         public void plotPath(string start, string end)
@@ -34,16 +33,35 @@ namespace mappmon
                 int resultLength = result.Length;
                 LocationCollection points = new LocationCollection();
                 int i = 0;
+                double eastSide = 0;
+                double westSide = 0;
+                double northSide = 0;
+                double southSide = 0;
                 while (i < resultLength)
                 {
                     string[] resString = result[i].Split(new Char[] { '|' });
                     double lat = Convert.ToDouble(resString[0]);
+                    if (lat < westSide) westSide = lat;
+                    if (lat > eastSide) eastSide = lat;
                     double longi = Convert.ToDouble(resString[1]);
+                    if (longi > northSide) northSide = longi;
+                    if (longi < southSide) southSide = longi;
                     points.Add(new System.Device.Location.GeoCoordinate(lat, longi));
                 }
                 string id = "Movement from " + start + " to " + end;
                 MapPolyline actualLine = new MapPolyline();
+                LocationRect view = new LocationRect();
+                view.East = eastSide;
+                view.West = westSide;
+                view.North = northSide;
+                view.South = southSide;
                 actualLine.Locations = points;
+                actualLine.Width = 3;
+                Color StrokeColor = new Color();
+                StrokeColor.B = 255;
+                actualLine.Stroke = new SolidColorBrush(StrokeColor);
+                strokeLayer.Children.Add(actualLine);
+                geoMap.SetView(view);
             }
             else
             {
