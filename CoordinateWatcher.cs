@@ -16,7 +16,7 @@ namespace mappmon
 {
     public class CoordinateWatcher
     {
-        int time = 5000;
+        int time = (App.Current as App).interval * 1000;
         private GeoCoordinateWatcher watcher;
 
         public CoordinateWatcher()
