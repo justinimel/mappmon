@@ -75,12 +75,12 @@ namespace mappmon
                 geoMap.SetView(view);
                 geoMap.Children.Add(actualLine);
                 geoMap.UpdateLayout();
-                return actualLine;
+               
             }
             else
             {
                 //bitch and moan somehow.
-                return null;
+             
             }
         }
     }
