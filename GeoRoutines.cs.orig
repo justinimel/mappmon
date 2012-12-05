@@ -28,11 +28,11 @@ namespace mappmon
 
         public void plotPath(string start, string end)
         {
-<<<<<<< HEAD
             string [] result = MappMon.mySocket.getLocations((App.Current as App).uid,start,end);
+<<<<<<< Updated upstream
+            
 =======
-            string[] result = MappMon.mySocket.getLocations((App.Current as App).uid, start, end);
->>>>>>> 7e87f94e0a16fee1feb1edfc38af222128cd04ec
+>>>>>>> Stashed changes
             if (!result[0].Equals("error"))
             {
                 int resultLength = result.Length - 1;

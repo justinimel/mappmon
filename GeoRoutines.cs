@@ -28,8 +28,8 @@ namespace mappmon
 
         public void plotPath(string start, string end)
         {
-            string [] result = MappMon.mySocket.getLocations((App.Current as App).uid,start,end);
-            
+            string[] result = MappMon.mySocket.getLocations((App.Current as App).uid, start, end);
+            if (!result[0].Equals("error"))
             {
                 int resultLength = result.Length - 1;
                 LocationCollection points = new LocationCollection();
@@ -40,16 +40,16 @@ namespace mappmon
                 double southSide = 90;
                 while (i < resultLength)
                 {
-                    string [] resString = result[i].Split(new Char [] {'|'});
+                    string[] resString = result[i].Split(new Char[] { '|' });
                     //System.Diagnostics.Debug.WriteLine(resString);
                     Double longi;
                     longi = Double.Parse(resString[0]);
-                    if (longi < westSide) westSide = longi +1;
-                    if (longi > eastSide) eastSide = longi -1;
+                    if (longi < westSide) westSide = longi -1;
+                    if (longi > eastSide) eastSide = longi +1;
                     Double lat;
                     lat = Double.Parse(resString[1]);
-                    if (lat > northSide) northSide = lat -1;
-                    if (lat < southSide) southSide = lat +1;
+                    if (lat > northSide) northSide = lat +1;
+                    if (lat < southSide) southSide = lat -1;
                     points.Add(new System.Device.Location.GeoCoordinate(lat, longi));
                     Pushpin pin = new Pushpin();
                     pin.Location = new GeoCoordinate(lat, longi);
@@ -75,10 +75,12 @@ namespace mappmon
                 geoMap.SetView(view);
                 geoMap.Children.Add(actualLine);
                 geoMap.UpdateLayout();
+               
             }
             else
             {
-                //bitch and moan somehow
+                //bitch and moan somehow.
+             
             }
         }
     }
